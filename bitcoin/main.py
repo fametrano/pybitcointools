@@ -554,7 +554,7 @@ def ecdsa_verify(msg, sig, pub):
 def ecdsa_raw_recover(msghash, vrs):
     v, r, s = vrs
     if not (27 <= v <= 34):
-        raise ValueError("%d must in range 27-31" % v)
+        raise ValueError("%d must in range 27-34" % v)
     x = r
     xcubedaxb = (x*x*x+A*x+B) % P
     beta = pow(xcubedaxb, (P+1)//4, P)
